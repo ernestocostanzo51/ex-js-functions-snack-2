@@ -1,9 +1,15 @@
-function stampaOgniSecondo (mess){
-    setInterval = (() => {
-        console.log(mess)
-    } , 1000)
+function stampaOgniSecondo(messaggio) {
+    
+    const idIntervallo = setInterval(() => {
+        console.log(messaggio);
+    }, 1000);
+
+    return idIntervallo;
 }
 
-const messaggio = "ciao a tutti"
+const notifica = stampaOgniSecondo("ciao")
 
-stampaOgniSecondo(messaggio)
+setTimeout(() =>{
+    clearInterval(notifica)
+    console.log("FINITO")
+} , 5000)
